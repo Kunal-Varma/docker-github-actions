@@ -21,7 +21,7 @@ jobs:
       run: |
         docker login -u  $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Build docker image
-      run: docker build . --file Dockerfile --tag kunal3836/myimage1:$(date +%s)
+      run: docker build . --file Dockerfile --tag kunal3836/myimage1:latest
       
     - name: Docker Push
       run: docker push ${{secrets.DOCKER_USER}}/myimage1
